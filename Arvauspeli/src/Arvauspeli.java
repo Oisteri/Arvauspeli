@@ -7,15 +7,22 @@ public class Arvauspeli {
 
         String input = "";
         String correctname = "Aatu";
-
+        String stop = "Stop";
 
             do {
-                System.out.println("Guess my name");
+                System.out.println("Guess my name (type Stop to end the game)");
                 input = in.nextLine();
+
+                if (input.equalsIgnoreCase(stop))
+                    {
+                        System.out.println("Thank you for playing!");
+                        break;
+                    }
 
                 if (input.equalsIgnoreCase(correctname)) 
                     {
                         System.out.println("Congratulations! You guessed correctly!");
+                        break;
                     }
                 else 
                     {
@@ -23,6 +30,5 @@ public class Arvauspeli {
                     }
 
             } while (!input.equals(correctname));
-        
     }
 }
